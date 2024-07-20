@@ -1,0 +1,136 @@
+\documentclass[12pt]{article}
+
+\usepackage[
+backend=biber,
+style=numeric,
+sorting=none
+]{biblatex}
+\addbibresource{sources.bib}
+\usepackage[table,x11names]{xcolor}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{adjustbox}
+\usepackage{fancyhdr}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+\usepackage{mdframed}
+\newmdtheoremenv{theo}{Theorem}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	pdftitle={Overleaf Example},
+	pdfpagemode=FullScreen,
+}
+\usepackage{changepage}
+
+\newcommand{\TODO}{[\textcolor{red}{XXX}]}
+
+% timeline table
+\newcommand\ytl[2]{
+	\parbox[b]{.4\linewidth}{\hfill{\color{cyan}\bfseries\sffamily #1}~$\cdots\cdots$~}\makebox[0pt][c]{$\bullet$}\vrule\quad \parbox[c]{.6\linewidth}{\vspace{7pt}\color{red!40!black!80}\raggedright\sffamily #2.\\[7pt]}\\[-3pt]}
+
+% Ingredients
+\newenvironment*{ingredients}
+	{
+		\paragraph*{Ingredients}
+		\begin{itemize}
+	}
+	{
+		\end{itemize}
+	}
+
+% Directions
+\newenvironment*{directions}
+	{
+		\paragraph*{Directions}
+		\begin{enumerate}
+	}
+	{
+		\end{enumerate}
+	}
+
+% Notes
+\newenvironment*{notes}
+	{
+		\paragraph*{Notes}
+		\hfill \newline
+		\begin{adjustwidth}{1cm}{}
+	}
+	{
+		\end{adjustwidth}
+	}
+
+\title{Thanksgiving: A Practitioner's Guide}
+
+\author{Evan Meade}
+
+\date{\today}
+
+\begin{document}
+	\fancyfoot[C]{Thanksgiving}
+	\fancyfoot[R]{\thepage}
+	
+	\maketitle
+	
+	\begin{abstract}
+		\TODO
+	\end{abstract}
+	
+	\newpage
+	
+	\section*{Version History}
+	\begin{tabular}{|l|l|l|l|}
+		\hline
+		\textbf{Version} & \textbf{Date} & \textbf{Updater} & \textbf{Description} \\\hline
+		1.0 & 20Jul24 & Evan Meade & Initial commit \\\hline
+	\end{tabular}
+	
+	\newpage
+	
+	\tableofcontents
+	
+	\newpage
+	
+	%	\begin{figure}[h]
+	%		\centering
+	%		\includegraphics[width=\textwidth]{file}
+	%		\caption{caption}
+	%		\label{fig:}
+	%	\end{figure}
+	
+	\section{Introduction}
+	
+	\newpage
+	
+	\section{Recipes}
+	
+	\subsection{Cranberry Sauce}
+	Yields approximately 2 cups
+	
+	\begin{ingredients}
+		\item 1 bag fresh cranberries (12 oz)
+		\item 3/4 c white sugar
+		\item 1 c water
+		\item 1 orange (zest of)
+		\item 1/4 c lime juice
+	\end{ingredients}
+	
+	\paragraph*{Directions}
+	
+	\begin{enumerate}
+		\item Add cranberries, sugar, and water to a saucepan.
+		\item Simmer over medium heat stirring occasionally and lightly mashing until cranberries begin to pop, about 10-15 minutes.
+		\item Zest orange into saucepan and add the lime juice. Stir to incorporate.
+		\item Reduce heat to low and continue simmering for 10-15 minutes until it begins to gel on a chilled plate.
+		\item Remove from heat, let cool completely, preferably overnight in fridge.
+		\item Serve slightly cool.
+	\end{enumerate}
+	
+	\begin{notes}
+		I prefer a more sour, punchy cranberry sauce than most recipes aim for. So if you don’t like that, you can leave out the lime juice and/or increase the sugar to 1 cup.
+	\end{notes}
+	
+\end{document}
