@@ -25,6 +25,7 @@ sorting=none
 	pdfpagemode=FullScreen,
 }
 \usepackage{changepage}
+\usepackage{parskip}
 
 \newcommand{\TODO}{[\textcolor{red}{XXX}]}
 
@@ -56,12 +57,25 @@ sorting=none
 \newenvironment*{notes}
 	{
 		\paragraph*{Notes}
-		\hfill \newline
+		%\hfill \newline
 		\begin{adjustwidth}{1cm}{}
 	}
 	{
 		\end{adjustwidth}
 	}
+
+% Oven schedule cells
+\newcommand{\Empty}{\cellcolor{lightgray}}
+\newcommand{\YeastRolls}{\cellcolor{Wheat2}Yeast Rolls}
+\newcommand{\Cornbread}{\cellcolor{Gold1}Cornbread}
+\newcommand{\Turkey}{\cellcolor{Tan3}Turkey}
+\newcommand{\SweetPotatoes}{\cellcolor{DarkOrange2}Sweet Potatoes}
+\newcommand{\BrusselsSprouts}{\cellcolor{OliveDrab4}Brussels Sprouts}
+\newcommand{\Stuffing}{\cellcolor{Burlywood3}Stuffing}
+\newcommand{\GreenBeanCasserole}{\cellcolor{Green4}Green Bean Casserole}
+\newcommand{\ApplePie}{\cellcolor{IndianRed2}Apple Pie}
+\newcommand{\PumpkinPie}{\cellcolor{Orange1}Pumpkin Pie}
+\newcommand{\PecanPie}{\cellcolor{LightSalmon4}Pecan Pie}
 
 \title{Thanksgiving: A Practitioner's Guide}
 
@@ -76,7 +90,7 @@ sorting=none
 	\maketitle
 	
 	\begin{abstract}
-		\TODO
+		When I was in charge of the cooking for Friendsgiving back in 2023, I had compiled a bunch of notes and recipes through my planning, but they weren't very organized. In an effort to make things easier for myself and others in the future, I took some time on lazy afternoons the following summer to consolidate and clean up those notes here. Although the presentation is quite formal, my hope is that this guide isn't taken \textit{too} seriously. Readers should feel free to swap recipes or dishes or schedules as they see fit; most of those presented here are just taken from other people anyways and could probably be improved upon (though I am quite proud of my own cranberry sauce recipe, see Sec.~\ref{sec:cranberry_sauce}). I'd say the most useful part of this whole guide is the oven/cooktop schedule in Sec.~\ref{sec:oven_schedule}. It provides a pretty neat arrangement of items grouped by temperature and time so that you can make a full feast with only a single standard, two-rack oven. But again, even this can be totally changed depending on your menu. The other main takeaway is just how many things can be made ahead of time (see Sec.~\ref{sec:prep_schedule}). So even if you are just one person, you can make most things over the couple evenings leading up to the big day, though obviously it's even faster with help. Overall, while it definitely requires a fair amount of planning and preparation, don't stress out over a Thanksgiving feast. Ultimately, it's just an excuse to get people together, and the food is just gravy, so to speak.
 	\end{abstract}
 	
 	\newpage
@@ -86,6 +100,7 @@ sorting=none
 		\hline
 		\textbf{Version} & \textbf{Date} & \textbf{Updater} & \textbf{Description} \\\hline
 		1.0 & 20Jul24 & Evan Meade & Initial commit \\\hline
+		2.0 & 24Jul24 & Evan Meade & Copy over from notes \\\hline
 	\end{tabular}
 	
 	\newpage
@@ -101,13 +116,310 @@ sorting=none
 	%		\label{fig:}
 	%	\end{figure}
 	
-	\section{Introduction}
+	\section{Introduction}\label{sec:introduction}
+	Thanksgiving can be a lovely day with a lovely meal, but it can just as easily be a stressful mess. This year, almost a dozen of my friends will be descending on Dallas with a taste for turkey (or tofurkey). Yet all we have in the way of a kitchen is our Airbnb's amenities and my small apartment. As the proverbial "Chef," I am duty bound to engineer a solution to this constrictive plight. I knew if I was going to have any chance of satiating these starving souls I'd need to plan Turkey day like a heist: craft a master plan and recruit a crack team to execute it without a trace. I'll try to avoid the mandatory mid-heist betrayal because, c'mon, it's Thanksgiving gosh darn it.
+	
+	I first did some \href{https://www.foodandwine.com/how/thanksgiving-dishes-make-ahead-advance-sides}{research} on what can be made ahead of time and what can't. Make aheads include:
+	\begin{itemize}
+		\item Desserts
+		\item Stuffing
+		\item Gravy (you'll see)
+		\item Casseroles
+		\item Prep work (cutting vegetables, brining turkey, etc.)
+	\end{itemize}
+	
+	Things to make a la minute include:
+	\begin{itemize}
+		\item Cook the turkey
+		\item Roast/saute vegetables
+		\item Salad
+		\item Starches (potatoes, breads, etc.)
+	\end{itemize}
+	
+	This was a good sign, since I had already boldly claimed to my friends that a lot of things could be prepped ahead of time without having really thought about it at all. Probably the hardest thing about preparing a Thanksgiving meal—besides the turkey, which we will return to—is coordinating the sheer number of dishes in a typical feast without a professional kitchen. I have one oven and four burners. At most, I can have 5-6 things cooking at once, which is only about half the menu. Luckily, a lot of those dishes are relatively small sides which can be made ahead of time, and they will often taste even better than if you made them on the day of the feast.
+	
+	Time to define the menu, keeping in mind what is easiest to make ahead of time. This is designed for serving 10-12 people at Thanksgiving, which means it serves about 20 people any other day of the year. The nice thing about this menu is that it is basically scale invariant; because half the fun of Thanksgiving is leaving with a big box of leftovers, as long as you're cooking a shit ton, you're doing it right. Force people to take their goodie bag on the way out if you have to. Remember, Thanksgiving is excessive, but that doesn't have to mean it's wasteful.
+	
+	Okay, enough dilly dallying, let's talk turkey.
+	
+	\newpage
+	
+	\section{The Menu}
+	Here's what the final setting will look like:
+	\begin{itemize}
+		\item Turkey\TODO
+		\item Gravy\TODO
+		\item Mashed potatoes (ve)\footnote{(ve) vegetarian}
+		\item Stuffing\TODO
+		\item (Optional) Stuffing (ve)\TODO
+		\item Green bean casserole (ve)
+		\item Roasted sweet potatoes (v)\footnote{(v) vegan}
+		\item Roasted brussels sprouts (v)
+		\item Salad (v)\TODO
+		\item Cranberry sauce (v)
+		\item Cornbread (ve)
+		\item Yeast rolls (ve)
+		\item Pumpkin pie (ve)
+		\item Pecan pie (ve)
+		\item Apple pie (ve) (yes, there will be three pies, this is the American way)
+		\item (Optional) Pretzel salad (ve)\footnote{This one's a McKenna family recipe. It sounds like a very odd combination, but it actually goes together pretty well. I think. Maybe I just have Stockholm syndrome.}
+	\end{itemize}
+	
+	While there is not one big vegetarian/vegan equivalent to the turkey, note that most of the sides are actually vegetarian or vegan. And everyone knows that Thanksgiving is 90\% about the sides anyways, so all your guests should have more than enough to eat regardless of their dietary restrictions.
+	
+	\subsection{Preparation Schedule}\label{sec:prep_schedule}
+	Now for the schedule. We'll be defining T as the time everyone sits down to start eating your Thanksgiving feast. So T-1m is one month before feast day, T+30min is thirty minutes after you sit down, etc.
+	
+	\subsubsection{T-1m to T-1w: Pies}
+	\begin{itemize}
+		\item Pumpkin pie
+		\item Pecan pie
+		\item Apple pie
+	\end{itemize}
+	
+	Pies can be made far ahead of time and actually freeze quite well, if done right. Bon Appetit gives the following \href{https://www.bonappetit.com/story/can-you-freeze-pumpkin-pie}{guidance} for pumpkin pie and pecan pie:
+	\begin{enumerate}
+		\item Bake it in a disposable aluminum pan (can be set in a regular pie pan)\footnote{I actually ended up just cooking it in a non-disposable pie pan, but it was fairly thin metal so same idea. Basically just want it to freeze quickly and evenly from all sides, so I guess just don't use a thick glass/ceramic pie pan? Or do. Who knows how much this actually matters.}
+		\item Let it cool completely on the counter on a wire rack (up to three hours)
+		\item Wrap the entire pie, including the tin, with three layers of plastic wrap minimizing any trapped air
+		\item Wrap that tightly with aluminum foil or a resealable freezer bag
+		\item Freeze completely and use within three months
+		\item Thaw in fridge unwrapped and uncovered for 24 hours
+		\item Let sit at room temperature for 1-2 hours
+		\item Warm in 225F oven for 30 minutes
+		\item Serve with whipped cream
+	\end{enumerate}
+	
+	Taste of Home recommends \href{https://www.tasteofhome.com/article/how-to-freeze-a-pie/}{different steps} for fruit pies, but for simplicity's sake I think we can do them the same as pumpkin and pecan.
+	
+	Alternatively, the pies can be made on T-3d or T-2d and just never be frozen.\footnote{This is what I ended up doing, and it worked out just fine.} Keep them wrapped loosely with aluminum foil in the refrigerator. Warm in 225F oven for 30 mins.
+	
+	\subsubsection{T-2d: Prep Work}
+	\begin{itemize}
+		\item Start brining turkey
+		\item Prep vegetables
+		\item Gravy
+	\end{itemize}
+	
+	At this point, folks are probably coming into town soon if they haven't already. "Oh no," you think to yourself. "Thanksgiving is only two days away and all I've done is make pie." But do not fret, my child. They say our memories have a recency bias where we recall the end of something with the greatest level of detail, so those desserts will already be the saving grace of your feast.
+	
+	But you are right that it's time to get serious about all the other foods. This day will be all about prepping the turkey/gravy along with basic cleaning and chopping for all your other dishes. You can easily knock this out in an evening after work.
+	
+	While it is fairly essential that you start the turkey and gravy today, the vegetable prep could honestly be done the next day instead. It's something that \textit{can} be done two days before the feast if you want to spread out the prep work a bit more evenly across the schedule, but it's not essential. Just stick the chopped veggies in airtight containers in the fridge. I probably wouldn't prep vegetables much earlier than this, or they may start to dry out a bit.
+	
+	Note that some vegetables--namely the potatoes and the sweet potatoes--should not be peeled or chopped ahead of time. If they are, then they have a tendency to oxidize, which makes them taste--and more importantly, look--weird. Same goes for avocados. So just chop onions, halve your brussels sprouts, slice your tomatoes, that kind of thing. Or save it for feast day if you want to have some tasks available for others to help with.
+	
+	\subsubsection{T-1d: Sides and Sauces}
+	\begin{itemize}
+		\item Start thawing pies
+		\item Whipped cream
+		\item Salad dressing
+		\item Green bean casserole
+		\item Cranberry sauce
+		\item Stuffing
+		\item (Optional) Pretzel salad
+	\end{itemize}
+	
+	People are here. There are airports to pick up from, hotels to check into, friends to catch up with. But you're cooking, so you can make someone else do the first two while you and a sous chef chat and cook in the kitchen. You'll probably want to take this day off if you can. It's not a ton of work to do, but with people coming into town you'll probably end up getting more distracted than you were yesterday, even if you have helping hands.
+	
+	\subsubsection{T-0d: Turkey and Carbs}
+	\begin{itemize}
+		\item Cook turkey
+		\item Mashed potatoes
+		\item Cornbread
+		\item Yeast rolls
+		\item Roast vegetables
+		\item Dress salad
+		\item Warm sides
+		\item Warm gravy
+		\item Warm pies
+	\end{itemize}
+	
+	Reckoning is upon us. The final stragglers have shown up, sweaters on and belt buckles loosened in anticipation of your feast. Everyone is offering to help (hopefully), but you know it would be a disaster if everyone actually tried to help.
+	
+	Here's the magic tip: never assign just one person to do something (unless they are a moderatly skilled chef). Instead, assign \textit{pairs} of people to tasks. Not because anything you're asking is incredibly hard, but because it's more fun to work with a friend and you're less likely to make a silly mistake if you have two pairs of eyes on it. Both of these factors mean they are less likely to be talking to \textit{you} while you are stressing out about the turkey.
+	
+	Here are your teams:
+	\begin{itemize}
+		\item You - turkey, gravy, and mashed potatoes (these are the most difficult, yet essential tasks for the day)
+		\item Cornbread and yeast rolls
+		\item Roasting vegetables and warming side dishes
+		\item Salad, serving dishes for cold sides, and table setting
+		\item (Later) warming pies
+	\end{itemize}
+	
+	\subsection{Oven Schedule}\label{sec:oven_schedule}
+	Now we need to consider the highly limiting resource of stove/oven space. I am going to assume that like most kitchens, you have four burners and one oven with at least two racks. On Thanksgiving day, here's your burner schedule:
+	\begin{itemize}
+		\item T-1h - T (1 large front burner): mashed potatoes
+		\item T-30min - T (1 front burner): gravy
+	\end{itemize}
+	
+	And here's your oven schedule, in Tab.~\ref{tab:oven_schedule}. Note that each cell means that item is in there from the time at the start of its row to the time at the start of the next row. So the sweet potatoes go in 90 minutes before dinner starts and come out 30 minutes before dinner starts, for instance. Similarly, the oven should be set to a new temperature the first time it appears, as highlighted in yellow. So, for example, two hours before dinner, it should be turned up to 450F.
+%	\begin{itemize}
+%		\item[] \textbf{T-3h: set to 350F}
+%		\item T-2.5h - T-2h (upper rack): yeast rolls
+%		\item T-2.5h - T-2h (lower rack): cornbread
+%		\item[] \hfill
+%		\item[] \textbf{T-2h: set to 450F}
+%		\item T-2h - T-30min (upper rack): turkey
+%		\item T-1.5h - T-30min (lower rack): sweet potatoes and brussels sprouts
+%		\item[] \hfill
+%		\item[] \textbf{T-30min: set to 350F}
+%		\item T-30min - T (upper rack): stuffing and green bean casserole
+%		\item T-10min - T (lower rack): cornbread and yeast rolls
+%		\item[] \hfill
+%		\item[] \textbf{T: set to 225F}
+%		\item T+30min - T+1h (upper rack): apple pie
+%		\item T+30min - T+1h (lower rack): pumpkin pie and pecan pie
+%		\item[] \hfill
+%		\item[] \textbf{T+1h: turn off oven}
+%	\end{itemize}
+	
+	\begin{table}
+		\centerline{
+		\begin{tabular}{|l|c|c|c|c|c|}
+			\hline
+			\textbf{Time} & \multicolumn{2}{|c|}{\textbf{Upper Rack}} & \textbf{Temp} & \multicolumn{2}{|c|}{\textbf{Lower Rack}} \\\hline
+			\textbf{T-3h} & \multicolumn{2}{|c|}{\Empty} & \cellcolor{yellow}350F & \multicolumn{2}{|c|}{\Empty} \\\hline
+			\textbf{T-2.5h} & \multicolumn{2}{|c|}{\YeastRolls} & 350F & \multicolumn{2}{|c|}{\Cornbread} \\\hline
+			\textbf{T-2h} & \multicolumn{2}{|c|}{\Turkey} & \cellcolor{yellow}450F & \multicolumn{2}{|c|}{\Empty} \\\hline
+			\textbf{T-1.5h} & \multicolumn{2}{|c|}{\Turkey} & 450F & \SweetPotatoes & \BrusselsSprouts \\\hline
+			\textbf{T-1h} & \multicolumn{2}{|c|}{\Turkey} & 450F & \SweetPotatoes & \BrusselsSprouts \\\hline
+			\textbf{T-30m} & \Stuffing & \GreenBeanCasserole & \cellcolor{yellow}350F & \multicolumn{2}{|c|}{\Empty} \\\hline
+			\cellcolor{yellow}\textbf{T-10m} & \Stuffing & \GreenBeanCasserole & 350F & \Cornbread & \YeastRolls \\\hline
+			\textbf{T} & \multicolumn{2}{|c|}{\Empty} & \cellcolor{yellow}225F & \multicolumn{2}{|c|}{\Empty} \\\hline
+			\textbf{T+30m} & \multicolumn{2}{|c|}{\ApplePie} & 225F & \PumpkinPie & \PecanPie \\\hline
+			\textbf{T+1h} & \multicolumn{2}{|c|}{\Empty} & \cellcolor{yellow}Off & \multicolumn{2}{|c|}{\Empty} \\\hline
+		\end{tabular}
+		}
+		\caption{Oven schedule for Thanksgiving Day}
+		\label{tab:oven_schedule}
+	\end{table}
+	
+	While these times are fairly accurate, they should be paired with good judgment and observation. If the brussels sprouts are looking toasty after 40 minutes, pull them out early. If the turkey is a bit thicker than expected, leave it in for 2 hours. Thanksgiving dinner is rarely right on time, and your guests would much rather have a properly cooked meal a bit later than a rushed meal right on time.
+	
+	The main idea behind the oven schedule is simply to group items by approximately equal temperatures and put them in an order that leads to as many things being warm and ready at the same time as possible. It also assumes that the upper rack is exposed to a bit more directional heat from above, while the lower rack is for more ambient cooking as it is protected from the top heating element by the food in the upper rack.
+	
+	Finally, temperature changes are not immediate, and can pose special risk when you are trying to drop the temperature. Both the stuffing and the green bean casserole are fairly wet and therefore unlikely to burn from a residual 450F oven. But this burning risk \textit{is} a part of why there is a 30 minute wait between turning the oven down to 225F and putting the pies in. We don't want to rebake them, just warm them up. Also, they don't need more than 30 minutes anyways and dinner will be at least an hour, so the break lets them be warm the soonest someone could conceivably taste them.
+	
+	But that all about does it as far as game day strategy goes. Now time to meet our recipes.
 	
 	\newpage
 	
 	\section{Recipes}
+	I collected these recipes from a variety of sources: most online, some from family, a few from books, and a couple all my own. While those from other sources are mostly represented here as-is, I have added some modifications to most of them based on my own cooking experiences and some consideration of not making things more complicated than they need to be.
 	
-	\subsection{Cranberry Sauce}
+	In particular, I try to omit any trace ingredients which are not used anywhere else. I also try and adjust cooking temperatures and times to match the oven schedule (see Tab.~\ref{tab:oven_schedule}), though I never dramatically alter them solely for that purpose.
+	
+	\TODO list of best and worst recipes
+	
+	\newpage
+	
+	\subsection{Mashed Potatoes}
+	Based on Andrew Rea's (a.k.a. Binging with Babish) \href{https://youtu.be/ZLnWdPPJvYg?si=7kN4RYZfTfVTtFed}{YouTube video}
+	
+	Yields approximately 1 quart
+	
+	\begin{ingredients}
+		\item 3 lbs Yukon Gold potatoes
+		\item 3/4 c milk
+		\item 3/4 c heavy cream
+		\item 12 tbsp unsalted butter
+		\item Salt and white pepper to taste
+		\item (Optional) 1 bunch chives
+	\end{ingredients}
+	
+	\begin{directions}
+		\item Add potatoes to cold water in pot. Salt generously. Bring to boil, then cover and reduce to simmer. Cook until chunks can be pierced with paring knife with no resistance, about 10-20 minutes.
+		\item Drain potatoes, put through ricer back into pot.
+		\item Add milk, heavy cream, and butter. Fold in gently, trying not to overwork it.
+		\item Season to taste with salt and pepper.
+		\item Serve immediately.
+	\end{directions}
+	
+	\begin{notes}
+		This should be made a la minute, not prepped ahead. Since Yukon Golds are lower in starch content than Russets, it is harder to end up overworking them and making them gummy.
+	\end{notes}
+	
+	\newpage
+	
+	\subsection{Green Bean Casserole}
+	Yields approximately 8 servings
+	
+	\begin{ingredients}
+		\item 1 can cream of mushroom soup
+		\item 2 cans whole green beans, drained
+		\item 1/2 c milk
+		\item 1 tsp Worchestershire sauce
+		\item 1 1/3 c fried onions (e.g. French's French Fried Onions)
+	\end{ingredients}
+	
+	\begin{directions}
+		\item Preheat oven to 350F.
+		\item Stir together soup, green beans, milk, Worchestershire, and 2/3 c fried onions. Pour into casserole dish.
+		\item Bake for 25 minutes.
+		\item Top with remaining 2/3 c fried onions. Bake for 3 minutes more.
+		\item Let cool slightly, and serve warm.
+	\end{directions}
+	
+	\begin{notes}
+		There are fancier ways to make this, but somehow this lazier version feels closer to the heart. I think this is pretty similar to how most people make it.
+	\end{notes}
+	
+	\newpage
+	
+	\subsection{Roasted Sweet Potatoes}
+	From Rick Martinez at \href{https://www.bonappetit.com/recipe/roasted-sweet-potatoes}{Bon Appetit}
+	
+	Yields approximately 10 servings
+	
+	\begin{ingredients}
+		\item 3 lbs sweet potatoes
+		\item 1/4 c olive oil
+		\item 2 tsp kosher salt (or 1 tsp table salt)
+		\item 8 cranks freshly ground black pepper
+	\end{ingredients}
+	
+	\begin{directions}
+		\item Preheat oven to 450F.
+		\item Peel potatoes, and cut into 1 1/2” pieces. Toss everything together on rimmed baking sheet.
+		\item Roast, tossing occassionally, until tender and browned, approximately 35-45 minutes.
+		\item Serve warm.
+	\end{directions}
+	
+	\begin{notes}
+		This is a simple one.
+	\end{notes}
+	
+	\newpage
+	
+	\subsection{Roasted Brussels Sprouts}
+	Adapted from Ina Garten (a.k.a. Barefott Contessa) on \href{https://www.foodnetwork.com/recipes/ina-garten/roasted-brussels-sprouts-recipe2-1941953#reviewsTop}{Food Network}
+	
+	Yields approximately 8 servings
+	
+	\begin{ingredients}
+		\item 1 1/2 lbs brussels sprouts
+		\item 4 tbsp olive oil
+		\item 3/4 tsp kosher salt (3/8 tsp table salt)
+		\item 8 cranks freshly ground black pepper
+	\end{ingredients}
+	
+	\begin{directions}
+		\item Preheat oven to 450F.
+		\item Halve the brussels sprouts, discarding any loose leaves. Toss everything together and spread out on a rimmed baking sheet.
+		\item Roast, tossing occassionally, until tender and browned, approximately 35-45 minutes.
+		\item Serve warm.
+	\end{directions}
+	
+	\begin{notes}
+		This is a simple one. Raised the recommended temperature from 400F to 450F, partly based on personal experience, and partly to match the temperature of the roasted sweet potatoes. Also, bumped up the oil from 3 tbsp to 4 tbsp because fat is flavor.
+	\end{notes}
+	
+	\newpage
+	
+	\subsection{Cranberry Sauce}\label{sec:cranberry_sauce}
 	Yields approximately 2 cups
 	
 	\begin{ingredients}
@@ -118,19 +430,272 @@ sorting=none
 		\item 1/4 c lime juice
 	\end{ingredients}
 	
-	\paragraph*{Directions}
-	
-	\begin{enumerate}
+	\begin{directions}
 		\item Add cranberries, sugar, and water to a saucepan.
 		\item Simmer over medium heat stirring occasionally and lightly mashing until cranberries begin to pop, about 10-15 minutes.
 		\item Zest orange into saucepan and add the lime juice. Stir to incorporate.
 		\item Reduce heat to low and continue simmering for 10-15 minutes until it begins to gel on a chilled plate.
 		\item Remove from heat, let cool completely, preferably overnight in fridge.
 		\item Serve slightly cool.
-	\end{enumerate}
+	\end{directions}
 	
 	\begin{notes}
-		I prefer a more sour, punchy cranberry sauce than most recipes aim for. So if you don’t like that, you can leave out the lime juice and/or increase the sugar to 1 cup.
+		I prefer a more sour, punchy cranberry sauce than most recipes aim for. So if you don't like that, you can leave out the lime juice and/or increase the sugar to 1 cup.
+	\end{notes}
+	
+	\newpage
+	
+	\subsection{Cornbread}\label{sec:cornbread}
+	From bluegirl on \href{https://www.allrecipes.com/recipe/17891/golden-sweet-cornbread/}{Allrecipes}
+	
+	Yields one 9" round
+	
+	\begin{ingredients}
+		\item 1 c all-purpose flour
+		\item 1 c yellow cornmeal
+		\item 2/3 c granulated white sugar
+		\item 3 1/2 tsp baking powder
+		\item 1 tsp kosher salt
+		\item 1 c milk
+		\item 1/3 c vegetable oil
+		\item 1 large egg
+	\end{ingredients}
+	
+	\begin{directions}
+		\item Preheat oven to 400F.
+		\item Lightly grease 9” round cake pan or cast iron skillet.
+		\item Whisk together flour, cornmeal, sugar, baking powder, and salt in a large bowl. Add milk, oil, and egg. Whisk until well combined. Pour into prepared pan.
+		\item Bake until a toothpick inserted into the center of the pan comes out clean, about 20-25 minutes.
+		\item Let cool slightly. Serve warm.
+	\end{directions}
+	
+	\begin{notes}
+		If you have a cast iron pan, this is a great use for it. The browning will be nice, and the presentation is way better.
+	\end{notes}
+	
+	\newpage
+	
+	\subsection{Yeast Rolls}
+	Adapted from DCASH30526 on \href{https://www.allrecipes.com/recipe/13827/quick-yeast-rolls/}{Allrecipes}
+	
+	Yields 8 rolls
+	
+	\begin{ingredients}
+		\item 1 c hot water
+		\item 3 tbsp granulated white sugar
+		\item 2 tbsp shortening
+		\item 1 (1/4 oz) package active dry yeast
+		\item 2 1/4 c all-purpose flour
+		\item 1 egg, beaten
+		\item 1 tsp salt
+	\end{ingredients}
+	
+	\begin{directions}
+		\item Preheat oven to 425F.
+		\item Mix hot water, sugar, and shortening in a large bowl. Let cool until lukewarm.
+		\item Stir in yeast until dissolved, then mix in flour, egg, and salt. Cover and let dough rise until doubled in size, about 30 minutes.
+		\item Grease a 9” round pan.
+		\item Divide dough into 8 equal parts. Nestle in pan. Let rise again until doubled in size, about 30 minutes.
+		\item Bake until golden brown on top and a knife inserted in the center comes out clean, about 10-15 minutes.
+	\end{directions}
+	
+	\begin{notes}
+		I bumped down the temperature to 400F so I could do it at the same time as the cornbread.
+	\end{notes}
+	
+	\newpage
+	
+	\subsection{All-Purpose Pie Crust}\label{sec:pie_crust}
+	From Claire Saffitz' \textit{Dessert Person}
+	
+	Yields crust for one 9" pie
+	
+	\begin{ingredients}
+		\item 200 g all-purpose flour
+		\item 13 g white granulated sugar
+		\item 3/4 tsp kosher salt
+		\item 10 tbsp unsalted butter
+	\end{ingredients}
+	
+	\begin{directions}
+		\item[] \textbf{Preparation}
+		\item Add some ice to a cup of water, place in fridge.
+		\item Cut 5 tbsp of butter into 1/8” squares, place in fridge.
+		\item In a large bowl, whisk together flour, sugar, and salt.
+		\item With remaining 5 tbsp of butter, cut into 1/2” cubes. Add to bowl, tossing to coat, then pressing between your fingers until there are no chunks of butter larger than a pea.
+		\item Add in the 5 tbsp of butter from the fridge, pressing between your fingers again until there are no chunks of butter larger than a pea and the mixture resembles a lightly damp sand.
+		\item Slowly stream in 5 tbsp of the chilled water while whisking with a fork, avoiding pouring in any ice.
+		\item Knead dough in bowl with your hands a few times until it comes together in a dough.
+		\item Wrap tightly in plastic wrap, forcing out any air and pressing down into a 3/4” thick rectangle. Chill in fridge at least 2 hours.
+		\item Take dough out of fridge and let rest on counter for 5 mins. Unwrap, and thwack it repeatedly with a rolling pin to make it more pliable. Thwack and roll it out until it is a rectangle approximately three times as long as it is wide. Fold like a trifold.
+		\item Wrap tightly in plastic wrap again, and return to fridge. Let rest at least 30 mins, or up to 3 days before use.
+		\item[] \hfill
+		\item[] \textbf{Forming}
+		\item Take the dough out of the fridge and let rest on counter for 5 mins.
+		\item Unwrap dough and thwack repeatedly with a rolling pin to make it more pliable. Roll it out into a circle about 13” in diameter.
+		\item Drape dough over pie pan. Lift and place dough into the bottom corners; do not press it down into there, or you will risk breaking the dough.
+		\item Trim any excess dough which is hanging far off the edge of the pan. Tuck the edge of the dough under itself so that it is between the lip of the pan and the crust. Form this cirulcar wall all the way around the rim.
+		\item Pinch one finger between two others to make a wavy edge of the rim. Follow back pressing your thumb into each part of the wavy rim which sticks out, making sure that the dough is adhering to that rim.
+	\end{directions}
+	
+	\begin{notes}
+		You can scale this recipe up to double or triple, just divide the dough by mass. This is a nice, all-purpose, simple pie crust which you can use whether you are par-baking or not.
+	\end{notes}
+	
+	\newpage
+	
+	\subsection{All-Purpose Crumble Topping}\label{sec:crumble_topping}
+	From Claire Saffitz' \textit{Dessert Person}, and her \href{https://www.youtube.com/watch?v=7PHSWxGLSEE}{YouTube video}
+	
+	Yields approximately 2 cups, enough for one 9" pie
+	
+	\TODO
+	
+	\newpage
+	
+	\subsection{Pumpkin Pie}
+	From Claire Saffitz' \textit{Dessert Person}, and her \href{https://www.youtube.com/watch?v=vT4Kk9v3B5Y}{YouTube video}
+	
+	Yields one 9" pie
+	
+	\begin{ingredients}
+		\item[] \textbf{Crust}
+		\item 1 All-Purpose Pie Crust (see Sec.~\ref{sec:pie_crust})
+		\item[] \hfill
+		\item[] \textbf{Filling}
+		\item 5 tbsp unsalted butter (2.5 oz / 71g) 
+		\item 1/3 c honey (4 oz/ 113g)
+		\item 3/4 c heavy cream (6 oz /170g), at room temperature
+		\item 4 large eggs (7 oz /200g), at room temperature
+		\item 1/4 c packed dark brown sugar (1.8 oz /50g)
+		\item 1 (15oz/ 425g) can unsweetened pumpkin puree (not pumpkin pie filling), preferably Libby's
+		\item 2 tsp ground cinnamon
+		\item 1 1/2 tsp ground ginger
+		\item 1 tsp vanilla extract
+		\item 1 tsp Diamond Crystal kosher salt (0.11 oz /3g)
+		\item 1/2 tsp ground allspice
+		\item 1/2 tsp ground nutmeg (preferably freshly grated), plus more for serving
+		\item 1/4 tsp ground cloves
+		\item (Optional) whipped cream or vanilla ice cream (to garnish)
+	\end{ingredients}
+	
+	\begin{directions}
+		\item[] \textbf{Crust}
+		\item Preheat oven to 425F.
+		\item Form the crust, as described in the crust recipe. Let chill in fridge uncovered for 30 minutes.
+		\item Line dough with aluminum foil, such that it hangs over the rim. Fill with uncooked rice, or other pie weights. Place on rimmed baking sheet.
+		\item Put in oven and bake until crust is dry around the edges and just beginning to brown, about 20-30 minutes.
+		\item Remove foil and weights. Poke a few small holes in bottom of crust with a knife or fork to allow any trapped steam to escape.
+		\item Reduce oven to 325F.
+		\item Return crust to oven and bake until crust is set and beginning to brown in the center, about 20-25 minutes.
+		\item Remove to wire rack and let cool.
+		\item[] \hfill
+		\item[] \textbf{Filling}
+		\item Preheat oven to 325F.
+		\item Put butter in small saucepan over medium low heat. Brown it, stirring constantly until sputtering subsides and butter is foaming, about 5-7 minutes. Remove from heat.
+		\item Add honey to the saucepan with the butter immediately to avoid burning. Stir to combine.
+		\item Return saucepan to medium heat for about 2 minutes, until honey is fragrant and nutty. Remove from heat and slowly stir in the heavy cream.
+		\item In a large bowl, whisk eggs. Add brown sugar and whisk vigorously for about 1 minute. Whisk in pumpkin, cinnamon, ginger, vanilla, salt, allspice, nutmeg, and cloves until smooth.
+		\item Slowly stream in the warm honey mixture, whisking constantly, until filling is homogenous.
+		\item[] \hfill
+		\item[] \textbf{Assembly}
+		\item Preheat oven to 325F.
+		\item Pour filling into cooled crust.
+		\item Bake until edges are set and slightly puffed, but center is recessed and wobbles like Jell-O, about 45-60 minutes.
+		\item Turn off oven and prop door open, cracked. Let pie cool completely in oven. (If you are under time constraint, you can just remove the pie and cool on a wire rack for at least 3 hours, but the surface may crack)
+		\item Serve warm or at room temperature. Optionally, garnish with whipped cream or vanilla ice cream.
+	\end{directions}
+	
+	\begin{notes}
+		This filling attempts to add a bit more depth to the pumpkin flavor by layering it with browned butter and honey. Use a local honey if possible for bolder flavor and regional botanicals.
+	\end{notes}
+	
+	\newpage
+	
+	\subsection{Pecan Pie}
+	Filling from Rick Martinez at \href{https://www.bonappetit.com/recipe/bas-best-pecan-pie}{Bon Appetit}
+	
+	Yields one 9" pie
+	
+	\begin{ingredients}
+		\item[] \textbf{Crust}
+		\item 1 All-Purpose Pie Crust (see Sec.~\ref{sec:pie_crust})
+		\item[] \hfill
+		\item[] \textbf{Filling}
+		\item 2 c pecan halves
+		\item 4 large eggs, room temperature, beaten to blend
+		\item 1 c light corn syrup
+		\item 2/3 c (packed; 134 g) light brown sugar
+		\item 1 tbsp robust-flavored (dark) molasses (not blackstrap)
+		\item 1 tbsp vanilla extract
+		\item 1 tsp kosher salt
+		\item 6 tbsp unsalted butter, melted, slightly cooled
+		\item (Optional) whipped cream or vanilla ice cream (to garnish)
+	\end{ingredients}
+	
+	\begin{directions}
+		\item[] \textbf{Crust}
+		\item Preheat oven to 425F.
+		\item Form the crust, as described in the crust recipe. Let chill in fridge uncovered for 30 minutes.
+		\item Line dough with aluminum foil, such that it hangs over the rim. Fill with uncooked rice, or other pie weights. Place on rimmed baking sheet.
+		\item Put in oven and bake until crust is dry around the edges and just beginning to brown, about 20-30 minutes.
+		\item Remove foil and weights. Poke a few small holes in bottom of crust with a knife or fork to allow any trapped steam to escape.
+		\item Reduce oven to 325F.
+		\item Return crust to oven and bake until crust is set and beginning to brown in the center, about 20-25 minutes.
+		\item Remove to wire rack and let cool.
+		\item[] \hfill
+		\item[] \textbf{Filling}
+		\item Preheat oven to 350F.
+		\item Toast pecans on rimmed baking sheet until browned and fragrant, about 8-10 minutes. Let cool.
+		\item Whisk together eggs, corn syrup, light brown sugar, molasses, vanilla, and salt in a large bowl until smooth. Slowly mix in the melted butter until combined. Fold in the Pecans.
+		\item[] \hfill
+		\item[] \textbf{Assembly}
+		\item Preheat oven to 325F.
+		\item Pour filling into cooled crust.
+		\item Bake until edges are set and slightly puffed, but center is recessed and wobbles like Jell-O, about 45-60 minutes.
+		\item Transfer to wire rack and let cool at least 3 hours before serving.
+		\item Serve warm or at room temperature. Optionally, garnish with whipped cream or vanilla ice cream.
+	\end{directions}
+	
+	\begin{notes}
+		This filling opts for simplicity, really trying to highlight that toasty Pea-Can flavor (yes, I am obligated to say it that way).
+	\end{notes}
+	
+	\newpage
+	
+	\subsection{Apple Pie}
+	From Claire Saffitz' \textit{Dessert Person}, and her \href{https://www.youtube.com/watch?v=7PHSWxGLSEE}{YouTube video}
+	
+	Yields one 9" pie
+	
+	\TODO
+	
+	\newpage
+	
+	\subsection{Pretzel Salad}
+	Yields approximately 10 servings
+	
+	\begin{ingredients}
+		\item 3 c crushed pretzel sticks
+		\item 1 + 1/4 c white granulated sugar
+		\item 2 sticks melted margarine
+		\item 1 (8 oz) package softened cream cheese
+		\item 1 1/2 c Cool Whip
+		\item 2 (3 oz) packages strawberry Jell-O
+		\item 2 c hot pineapple juice
+		\item 2 (10 oz) packages frozen sliced strawberries
+	\end{ingredients}
+	
+	\begin{directions}
+		\item Preheat oven to 350F.
+		\item Mix pretzels, 1/4 c sugar, and margarine together. Put in a flat layer in 9x13 pan. Bake 10 minutes. Let cool.
+		\item Mix together cream cheese and sugar. Fold in Cool Whip. Spread onto a layer on top of pretzel layer.
+		\item Dissolve Jell-O into hot juice, add frozen strawberries. Let partially jell. Spread over top of cream cheese mixture.
+		\item Chill overnight. Serve cold.
+	\end{directions}
+	
+	\begin{notes}
+		This isn't the most traditional Thanksgiving dish, but it's a staple for my family. It's the epitome of a seventies recipe: an unconventional use of Jell-O, puzzling layers, and a shockingly liberal usage of the term "salad." But it hits. It hits.
 	\end{notes}
 	
 \end{document}
